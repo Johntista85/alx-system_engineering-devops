@@ -3,9 +3,4 @@
 # display contents of the current directory in a list format
 # excluding hidden files and showing only the part of the name after the first dash
 
-for file in *; do
-    if [[ ! "$file" =~ ^\..* ]]; then
-        echo "$file" | cut -d "-" -f2
-    fi
-done
-
+ls | grep -v '^\.' | sed 's/^[^-]*-//'
