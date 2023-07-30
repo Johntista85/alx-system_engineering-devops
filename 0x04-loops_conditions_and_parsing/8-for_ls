@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
-# display all contents of current directory
-DIR=$(ls)
-for file in $DIR; do
-    echo "$file" | cut -d "-" -f2
+
+# display contents of the current directory in a list format
+# excluding hidden files and showing only the part of the name after the first dash
+
+for file in *; do
+    if [[ ! "$file" =~ ^\..* ]]; then
+        echo "$file" | cut -d "-" -f2
+    fi
 done
+
