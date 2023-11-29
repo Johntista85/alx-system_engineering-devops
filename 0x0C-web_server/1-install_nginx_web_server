@@ -3,7 +3,6 @@
 # Nginx should be listening on port 80
 # curl localhost should result "Hello World!"
 
-
 # Update apt and Install nginx
 sudo apt -y update
 sudo apt -y install nginx
